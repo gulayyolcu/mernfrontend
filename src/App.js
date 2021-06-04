@@ -9,7 +9,7 @@ function App() {
   //const [newAge]=useState("")
 
   const addFriend = () => {
-    Axios.post('http://localhost:3001/addFriend', {name: name,age: age})
+    Axios.post('https://mernbackendgulay.herokuapp.com/addFriend', {name: name,age: age})
       .then((response)=>{
         setListOfFriends([...listOfFriends,{_id:response.data._id,name:name,age:age}])
       })
@@ -17,7 +17,7 @@ function App() {
   }
 
   useEffect(() => {
-    Axios.get('http://localhost:3001/read',)
+    Axios.get('https://mernbackendgulay.herokuapp.com/read',)
       .then((response) => {
         setListOfFriends(response.data);
       })
@@ -27,7 +27,7 @@ function App() {
   }, [])
 
   const updateFriendAge=(id)=>{ 
-    Axios.put('http://localhost:3001/update',{id:id,age:age})
+    Axios.put('https://mernbackendgulay.herokuapp.com/update',{id:id,age:age})
       .then(()=>{
           setListOfFriends(listOfFriends.map((val)=>{
               return val._id===id?{id:id,age:age,name:val.name}:val
@@ -36,7 +36,7 @@ function App() {
   }
 
   const deleteFriend=(id)=>{
-    Axios.delete(`http://localhost:3001/delete/${id}`)
+    Axios.delete(`https://mernbackendgulay.herokuapp.com/delete/${id}`)
       .then(()=>{
         setListOfFriends(listOfFriends.filter((val)=>{
           return val._id!==id

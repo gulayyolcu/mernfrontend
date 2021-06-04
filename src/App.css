@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.container{
+  font-family: 'Roboto', sans-serif;
+  font-size:20px;
+  letter-spacing: 0px;
+}
+
+
+
+.login{
+  background: url('http://bit.ly/2gPLxZ4');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
